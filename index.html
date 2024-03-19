@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisanka Wielkanocna</title>
+    <style>
+        body{
+            background-color: darkcyan;
+        }
+        #jajko{
+            width: 420px;
+            height: 600px;
+            background-color: aliceblue;
+            margin: auto;
+            border-radius: 50%;
+            display: grid;
+            grid-template-rows: repeat(5, 20%);
+            overflow: hidden;
+            animation: poruszanie 5s infinite;
+            
+        }
+        .pasek{
+            border-top: 1px solid rgb(16, 224, 33);
+        }
+        .pasek:nth-child(1){
+            background-color: rgb(242, 255, 1);
+            border: 20px rgba(42, 5, 115, 0.767);
+            border-width: 20px;
+            border-style: dotted;
+        }
+        .pasek:nth-child(2){
+            background: linear-gradient(to top, rgba(6, 81, 143, 0.89),rgba(7, 252, 64, 0.919));
+            border-bottom: 20px rgb(221, 236, 11) dashed ;
+    
+        }
+        .pasek:nth-child(3){
+            background: linear-gradient(to bottom, rgb(203, 225, 4),rgb(242, 8, 211)) ;
+            border-bottom: 20px rgb(17, 242, 17) dashed;
+        }
+        .pasek:nth-child(4){
+            background-color: yellowgreen;
+        }
+        .pasek:nth-child(5){
+            background: linear-gradient(to top, rgb(126, 12, 232), rgb(27, 172, 198));
+            border: 20px rgb(17, 195, 65) double;
+        }
+        h2{
+            text-align: center;
+            color: black;
+        }
+        @keyframes poruszanie{
+            0% {transform: rotateZ(200deg);}
+            50%{transform: rotateZ(-200deg);}
+            100%{transform: rotateZ(200deg);}
+        }
+    </style>
+</head>
+<body>
+    <div id="jajko">
+        <div class="pasek" onclick="zyczenia('Wesołych Świąt')"></div>
+        <div class="pasek" onclick="zyczenia('Wszystkiego najlepszego')"></div>
+        <div class="pasek" onclick="zyczenia('Kolorowych pisanek')"></div>
+        <div class="pasek" onclick="zyczenia('Wesołego Śmingusa')"></div>
+        <div class="pasek" onclick="zyczenia('Smacznego jajka')"></div>
+
+    </div>
+    <h2 id="tekst">Kliknij na jajko</h2>
+    <script>
+        function zyczenia(tresc){
+            document.getElementById("tekst").innerHTML=tresc;
+        }
+    </script>
+</body>
+</html>
